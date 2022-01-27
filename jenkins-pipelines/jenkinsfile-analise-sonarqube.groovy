@@ -35,7 +35,13 @@ pipeline {
           steps {
             sh "mvn clean package -DskipTests"
           }
-        }
+       }
+    
+    stage("SonarQube Analise"){
+          steps {
+            sh "mvn sonar:sonar"
+          }
+       }
     
   }
   
